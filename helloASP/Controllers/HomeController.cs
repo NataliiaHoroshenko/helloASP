@@ -1,4 +1,5 @@
-﻿using System;
+﻿using helloASP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,14 @@ namespace helloASP.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ApplicationDbContext context = new ApplicationDbContext();
+            var model = context.Users.Select(
+                x=>new UserShowInfo
+                {
+                    Id=x.Id,
+                    Email=x.Email
+                }).ToList();
+            return View(model);
         }
 
         public ActionResult About()
@@ -26,5 +34,12 @@ namespace helloASP.Controllers
 
             return View();
         }
+    }
+
+    public class UserShowInfo
+    {
+        public string Id { get; set; }
+        public string Email { get; set; }
+
     }
 }
