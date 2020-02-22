@@ -18,4 +18,13 @@ namespace helloASP.Models
         [Display(Name = "Опис")]
         public virtual string Description { get; set; }
     }
+    public class CategoryItemViewModel
+    {
+        public int Id { get; set; }
+        [Display(Name = "Назва категорії")]
+        public virtual string Name { get; set; }
+
+        [Display(Name = "Url-посилання")]
+        public virtual string UrlSlug { get; set; }
+    }
 }
