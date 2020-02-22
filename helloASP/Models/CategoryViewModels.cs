@@ -29,4 +29,16 @@ namespace helloASP.Models
         [Display(Name = "Url-посилання")]
         public virtual string UrlSlug { get; set; }
     }
+    public class CategoryEditViewModel
+    {
+        public int Id { get; set; }
+        [Display(Name = "Назва категорії")]
+        public virtual string Name { get; set; }
+
+        [Display(Name = "Url-посилання")]
+        public virtual string UrlSlug { get; set; }
+
+        [Display(Name = "Опис")]
+        public virtual string Description { get; set; }
+    }
 }

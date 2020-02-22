@@ -76,5 +76,35 @@ namespace helloASP.Controllers
             }
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var cat = _context.Categories
+                .Select(c => new CategoryEditViewModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    UrlSlug = c.UrlSlug
+                })
+                .SingleOrDefault(x => x.Id == id);
+            if (cat == null)
+                return RedirectToAction("Index");
+            return View(cat);
+        }
+
+        public ActionResult Edit(CategoryEditViewModel model)
+        {
+            var cat = _context.Categories
+                .SingleOrDefault(x => x.Id == model.Id);
+            if (cat != null)
+            {
+                cat.Name = model.Name;
+                cat.UrlSlug = model.UrlSlug;
+                cat.Description = model.Description;
+
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
