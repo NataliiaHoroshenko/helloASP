@@ -34,14 +34,18 @@ namespace helloASP.Controllers
         [HttpPost]
         public ActionResult Create(CategoryCreateViewModel model)
         {
-            ApplicationDbContext context = new ApplicationDbContext();
-            Category category = new Category();
-            category.Name = model.Name;
-            category.UrlSlug = model.UrlSlug;
-            category.Description = model.Description;
-            context.Categories.Add(category);
-            context.SaveChanges();
-            return RedirectToAction("Index");            
+            if (ModelState.IsValid)
+            {
+                ApplicationDbContext context = new ApplicationDbContext();
+                Category category = new Category();
+                category.Name = model.Name;
+                category.UrlSlug = model.UrlSlug;
+                category.Description = model.Description;
+                context.Categories.Add(category);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
 
     }

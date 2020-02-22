@@ -10,9 +10,11 @@ namespace helloASP.Models
     public class CategoryCreateViewModel
     {
         [Display(Name="Назва категорії")]
+        [Required(ErrorMessage ="Pole name Obovyzrovo")]
         public virtual string Name { get; set; }
 
         [Display(Name = "Url-посилання")]
+        [Required(ErrorMessage = "Pole URL Obovyzrovo")]
         public virtual string UrlSlug { get; set; }
 
         [Display(Name = "Опис")]
