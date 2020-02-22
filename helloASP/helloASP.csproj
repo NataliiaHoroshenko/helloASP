@@ -168,8 +168,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Entites\Category.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,8 +179,13 @@
     <Compile Include="Migrations\202002151332389_add tables identity.Designer.cs">
       <DependentUpon>202002151332389_add tables identity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002221230301_Add new table tblCategories.cs" />
+    <Compile Include="Migrations\202002221230301_Add new table tblCategories.Designer.cs">
+      <DependentUpon>202002221230301_Add new table tblCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CategoryViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -261,6 +269,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002151332389_add tables identity.resx">
       <DependentUpon>202002151332389_add tables identity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002221230301_Add new table tblCategories.resx">
+      <DependentUpon>202002221230301_Add new table tblCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
