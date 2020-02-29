@@ -69,7 +69,7 @@ namespace helloASP.Controllers
                     Type = x.Type,
                     Price = x.Price,
                     Description = x.Description,
-                   // Image = x.Image
+                    Image = x.Image
                 }).SingleOrDefault(c => c.Id == id);
             if (sf == null)
                 return RedirectToAction("Index");
@@ -86,7 +86,7 @@ namespace helloASP.Controllers
                 item.Price = model.Price;
                 item.Type = model.Type;
                 item.Description = model.Description;
-                //item.Image = model.Image;
+                item.Image = model.Image;
                 _context.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -102,7 +102,7 @@ namespace helloASP.Controllers
                     Type = x.Type,
                     Price = x.Price,
                     Description = x.Description,
-                  //  Image = x.Image
+                    Image = x.Image
                 }).SingleOrDefault(c => c.Id == id);
             if (sf == null)
                 return RedirectToAction("Index");

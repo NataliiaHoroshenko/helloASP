@@ -50,7 +50,7 @@ namespace helloASP.Models
         public virtual decimal Price { get; set; }
         [Display(Name = "Опис")]
         public virtual string Description { get; set; }
-        //[Display(Name = "Фото")]
-        //public virtual HttpPostedFileBase Image { get; set; }
+        [Display(Name = "Фото")]
+        public virtual string Image { get; set; }
     }
 }

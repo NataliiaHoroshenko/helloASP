@@ -269,6 +269,7 @@
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\SelfDefense\Index.cshtml" />
     <Content Include="Views\SelfDefense\Create.cshtml" />
+    <Content Include="Views\SelfDefense\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
