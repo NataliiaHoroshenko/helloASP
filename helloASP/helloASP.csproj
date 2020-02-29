@@ -171,7 +171,9 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SelfDefenseController.cs" />
     <Compile Include="Entites\Category.cs" />
+    <Compile Include="Entites\SelfDefense.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,11 +185,24 @@
     <Compile Include="Migrations\202002221230301_Add new table tblCategories.Designer.cs">
       <DependentUpon>202002221230301_Add new table tblCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002291303585_add table tblSelfDefense.cs" />
+    <Compile Include="Migrations\202002291303585_add table tblSelfDefense.Designer.cs">
+      <DependentUpon>202002291303585_add table tblSelfDefense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002291437469_update table tblSelfDefense.cs" />
+    <Compile Include="Migrations\202002291437469_update table tblSelfDefense.Designer.cs">
+      <DependentUpon>202002291437469_update table tblSelfDefense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002291442562_update table tblSelfDefense2.cs" />
+    <Compile Include="Migrations\202002291442562_update table tblSelfDefense2.Designer.cs">
+      <DependentUpon>202002291442562_update table tblSelfDefense2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CategoryViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SelfDefenseViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -252,9 +267,12 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Delete.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\SelfDefense\Index.cshtml" />
+    <Content Include="Views\SelfDefense\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -275,6 +293,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002221230301_Add new table tblCategories.resx">
       <DependentUpon>202002221230301_Add new table tblCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002291303585_add table tblSelfDefense.resx">
+      <DependentUpon>202002291303585_add table tblSelfDefense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002291437469_update table tblSelfDefense.resx">
+      <DependentUpon>202002291437469_update table tblSelfDefense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002291442562_update table tblSelfDefense2.resx">
+      <DependentUpon>202002291442562_update table tblSelfDefense2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
