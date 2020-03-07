@@ -7,8 +7,8 @@ using System.Web;
 
 namespace helloASP.Entites
 {
-    [Table("tblCategories")]
-    public class Category
+    [Table("tblPosts")]
+    public class Post
     {
         [Key]
         public int Id { get; set; }
@@ -18,8 +18,11 @@ namespace helloASP.Entites
         [Required, StringLength(50)]
         public virtual string UrlSlug { get; set; }
 
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
         [StringLength(2000)]
         public virtual string Description { get; set; }
-        public virtual ICollection<Post> Posts { get; set; }
     }
 }

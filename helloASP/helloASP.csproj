@@ -172,8 +172,10 @@
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Entites\Category.cs" />
     <Compile Include="Entites\Editor.cs" />
+    <Compile Include="Entites\Post.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,8 +195,13 @@
     <Compile Include="Migrations\202003071349537_Add editor table update size.Designer.cs">
       <DependentUpon>202003071349537_Add editor table update size.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003071507468_Add table tblPosts.cs" />
+    <Compile Include="Migrations\202003071507468_Add table tblPosts.Designer.cs">
+      <DependentUpon>202003071507468_Add table tblPosts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\PostViewModels.cs" />
     <Compile Include="Models\CategoryViewModels.cs" />
     <Compile Include="Models\EditorViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -517,6 +524,9 @@
     <Content Include="Views\Category\Delete.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Editor\Index.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
+    <Content Include="Views\Post\Create.cshtml" />
+    <Content Include="Views\Post\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -546,6 +556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003071349537_Add editor table update size.resx">
       <DependentUpon>202003071349537_Add editor table update size.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003071507468_Add table tblPosts.resx">
+      <DependentUpon>202003071507468_Add table tblPosts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
