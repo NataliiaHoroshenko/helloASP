@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Scripts/froala-editor/css/froala_editor.pkgd.css")
     @Styles.Render("~/Content/css")
     <style>
     </style>
@@ -29,6 +30,7 @@
                         <li>@Html.ActionLink("Категорії", "Index", "Category")</li>
                     }
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Froala", "Index", "Editor")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

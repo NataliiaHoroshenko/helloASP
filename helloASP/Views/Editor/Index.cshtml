@@ -1,0 +1,32 @@
+﻿@model IEnumerable<helloASP.Models.EditorViewModels>
+
+
+
+@foreach (var item in Model)
+{
+    <label>@item.Id</label>
+    <div>
+        @Html.Raw(item.Otcher)
+    </div>
+    @*<textarea id="edit">@item.Otcher</textarea>*@
+}
+
+<div class="container">
+    <h2>Додайте опис</h2>
+    <form action="@Url.Action("Add", "Editor")" method="post">
+        <textarea id="edit" name="Otcher"></textarea>
+        <div>
+            <input type="submit" class="btn btn-success" value="Додати" />
+        </div>
+    </form>
+</div>
+<script src="~/Scripts/froala-editor/js/froala_editor.pkgd.min.js"></script>
+<script>
+    new FroalaEditor('#edit', {
+        //Set the image upload URL.
+        //imageUploadURL: 'http://localhost:8080/newsPortal/upload_image',
+        //imageUploadParams: {
+        //    id: 'my_editor'
+        //}
+    })
+</script>
