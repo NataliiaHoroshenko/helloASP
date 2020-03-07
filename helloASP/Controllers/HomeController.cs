@@ -16,7 +16,8 @@ namespace helloASP.Controllers
                 x=>new UserShowInfo
                 {
                     Id=x.Id,
-                    Email=x.Email
+                    Email=x.Email,
+                    Roles= x.Roles.Select(g => g.RoleId.ToString()).ToList()
                 }).ToList();
             return View(model);
         }
@@ -40,6 +41,7 @@ namespace helloASP.Controllers
     {
         public string Id { get; set; }
         public string Email { get; set; }
+        public List<string> Roles { get; set; } 
 
     }
 }

@@ -17,15 +17,18 @@ namespace helloASP.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager ,
+            ApplicationRoleManager roleManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -51,7 +54,17 @@ namespace helloASP.Controllers
                 _userManager = value;
             }
         }
-
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+        }
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -151,7 +164,22 @@ namespace helloASP.Controllers
         {
             if (ModelState.IsValid)
             {
+                string roleName = "Admin";
+                var role = RoleManager.FindByName(roleName);
+                if(role==null)
+                {
+                    var res = await RoleManager.CreateAsync(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole(roleName));
+                    if(res==IdentityResult.Success)
+                    {
+                        role = RoleManager.FindByName(roleName);
+                    }
+                }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                user.Roles.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole
+                {
+                    RoleId = role.Id,
+                    UserId = user.Id
+                });
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace helloASP.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _context;
