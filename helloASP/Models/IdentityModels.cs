@@ -26,10 +26,9 @@ namespace helloASP.Models
         {
         }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<SelfDefense> SelfDefenses { get; set; }
         public DbSet<Editor> Editors { get; set; }
         public DbSet<Post> Posts { get; set; }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
